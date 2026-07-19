@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Cloud Batch</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+    /* ===========================
+    Roman Cloud Batch
+    Main Stylesheet
+    =========================== */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        scroll-behavior:smooth;
+    }
+
+    :root{
+
+        --primary:#2563eb;
+        --secondary:#1e40af;
+        --dark:#111827;
+        --white:#ffffff;
+        --light:#f4f7fb;
+        --text:#4b5563;
+        --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    }
+
+    body{
+
+        font-family:'Poppins',sans-serif;
+        background:var(--light);
+        color:var(--dark);
+
+    }
+
+    /* ================= NAVBAR ================= */
+
+    header{
+
+        position:fixed;
+        width:100%;
+        top:0;
+        left:0;
+        background:#fff;
+        box-shadow:var(--shadow);
+        z-index:1000;
+
+    }
+
+    .navbar{
+
+        width:90%;
+        margin:auto;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        height:80px;
+
+    }
+
+    .logo{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:10px;
+
+    }
+
+    .logo img{
+
+        width:50px;
+
+        height:50px;
+
+        border-radius:50%;
+
+    }
+
+    .logo span{
+
+        font-size:22px;
+
+        font-weight:700;
+
+        color:var(--primary);
+
+    }
+
+    .nav-links{
+
+        display:flex;
+
+        list-style:none;
+
+        gap:30px;
+
+    }
+
+    .nav-links a{
+
+        text-decoration:none;
+
+        color:#222;
+
+        font-weight:500;
+
+        transition:.3s;
+
+    }
+
+    .nav-links a:hover{
+
+        color:var(--primary);
+
+    }
+
+    .buttons{
+
+        display:flex;
+
+        gap:15px;
+
+    }
+
+    .login-btn{
+
+        text-decoration:none;
+
+        color:var(--primary);
+
+        border:2px solid var(--primary);
+
+        padding:10px 20px;
+
+        border-radius:30px;
+
+        transition:.3s;
+
+    }
+
+    .login-btn:hover{
+
+        background:var(--primary);
+
+        color:white;
+
+    }
+
+    .register-btn{
+
+        text-decoration:none;
+
+        background:var(--primary);
+
+        color:white;
+
+        padding:10px 20px;
+
+        border-radius:30px;
+
+        transition:.3s;
+
+    }
+
+    .register-btn:hover{
+
+        background:var(--secondary);
+
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+
+        width:90%;
+
+        margin:120px auto 80px;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        gap:50px;
+
+    }
+
+    .hero-left{
+
+        flex:1;
+
+    }
+
+    .hero-left h1{
+
+        font-size:55px;
+
+        line-height:1.3;
+
+        margin-bottom:20px;
+
+    }
+
+    .hero-left span{
+
+        color:var(--primary);
+
+    }
+
+    .hero-left p{
+
+        color:var(--text);
+
+        line-height:1.8;
+
+        margin-bottom:30px;
+
+    }
+
+    .hero-buttons{
+
+        display:flex;
+
+        gap:20px;
+
+    }
+
+    .primary-btn{
+
+        text-decoration:none;
+
+        background:var(--primary);
+
+        color:white;
+
+        padding:15px 30px;
+
+        border-radius:40px;
+
+        transition:.3s;
+
+    }
+
+    .primary-btn:hover{
+
+        background:var(--secondary);
+
+    }
+
+    .secondary-btn{
+
+        text-decoration:none;
+
+        border:2px solid var(--primary);
+
+        color:var(--primary);
+
+        padding:15px 30px;
+
+        border-radius:40px;
+
+        transition:.3s;
+
+    }
+
+    .secondary-btn:hover{
+
+        background:var(--primary);
+
+        color:white;
+
+    }
+
+    .hero-right{
+
+        flex:1;
+
+        text-align:center;
+
+    }
+
+    .hero-right img{
+
+        width:100%;
+
+        max-width:500px;
+
+    }
+
+    /* ================= STATS ================= */
+
+    .stats{
+
+        width:90%;
+
+        margin:auto;
+
+        display:grid;
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:30px;
+
+    }
+
+    .stat-card{
+
+        background:white;
+
+        padding:40px;
+
+        text-align:center;
+
+        border-radius:15px;
+
+        box-shadow:var(--shadow);
+
+    }
+
+    .stat-card h2{
+
+        color:var(--primary);
+
+        font-size:40px;
+
+    }
+
+    .stat-card p{
+
+        margin-top:10px;
+
+        color:var(--text);
+
+    }
+
+    /* ================= COURSES ================= */
+
+    .courses{
+
+        width:90%;
+
+        margin:90px auto;
+
+    }
+
+    .courses h2{
+
+        text-align:center;
+
+        font-size:40px;
+
+        margin-bottom:50px;
+
+    }
+
+    .course-container{
+
+        display:grid;
+
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+        gap:30px;
+
+    }
+
+    .course-card{
+
+        background:white;
+
+        padding:40px;
+
+        border-radius:20px;
+
+        text-align:center;
+
+        transition:.4s;
+
+        box-shadow:var(--shadow);
+
+    }
+
+    .course-card:hover{
+
+        transform:translateY(-10px);
+
+    }
+
+    .course-card i{
+
+        font-size:55px;
+
+        color:var(--primary);
+
+        margin-bottom:20px;
+
+    }
+
+    .course-card h3{
+
+        margin-bottom:15px;
+
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about{
+
+        width:90%;
+
+        margin:100px auto;
+
+        text-align:center;
+
+    }
+
+    .about h2{
+
+        font-size:40px;
+
+        margin-bottom:20px;
+
+    }
+
+    .about p{
+
+        max-width:800px;
+
+        margin:auto;
+
+        color:var(--text);
+
+        line-height:1.8;
+
+    }
+
+    /* ================= FEATURES ================= */
+
+    .features{
+
+        width:90%;
+
+        margin:100px auto;
+
+    }
+
+    .features h2{
+
+        text-align:center;
+
+        margin-bottom:50px;
+
+        font-size:40px;
+
+    }
+
+    .feature-container{
+
+        display:grid;
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:30px;
+
+    }
+
+    .feature-card{
+
+        background:white;
+
+        text-align:center;
+
+        padding:40px;
+
+        border-radius:20px;
+
+        box-shadow:var(--shadow);
+
+        transition:.3s;
+
+    }
+
+    .feature-card:hover{
+
+        transform:translateY(-10px);
+
+    }
+
+    .feature-card i{
+
+        font-size:50px;
+
+        color:var(--primary);
+
+        margin-bottom:20px;
+
+    }
+
+    /* ================= CTA ================= */
+
+    .cta{
+
+        width:90%;
+
+        margin:100px auto;
+
+        background:linear-gradient(135deg,#2563eb,#1e40af);
+
+        color:white;
+
+        text-align:center;
+
+        padding:70px;
+
+        border-radius:20px;
+
+    }
+
+    .cta h2{
+
+        margin-bottom:30px;
+
+        font-size:38px;
+
+    }
+
+    .cta .primary-btn{
+
+        background:white;
+
+        color:#2563eb;
+
+    }
+
+    .cta .primary-btn:hover{
+
+        background:#e5e7eb;
+
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+
+        background:#111827;
+
+        color:white;
+
+        text-align:center;
+
+        padding:50px 20px;
+
+    }
+
+    footer h2{
+
+        margin-bottom:15px;
+
+    }
+
+    footer p{
+
+        margin:8px 0;
+
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:992px){
+
+    .hero{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+
+    }
+
+    .hero-buttons{
+
+    justify-content:center;
+
+    }
+
+    .stats{
+
+    grid-template-columns:1fr;
+
+    }
+
+    .feature-container{
+
+    grid-template-columns:1fr;
+
+    }
+
+    }
+
+    @media(max-width:768px){
+
+    .navbar{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px 0;
+
+    }
+
+    .nav-links{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    margin:20px 0;
+
+    }
+
+    .buttons{
+
+    margin-bottom:15px;
+
+    }
+
+    .hero-left h1{
+
+    font-size:38px;
+
+    }
+
+    .courses h2,
+
+    .about h2,
+
+    .features h2,
+
+    .cta h2{
+
+    font-size:30px;
+
+    }
+
+    }
+</style>
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img src="https://www.varonis.com/hubfs/Blog_VaronisforAWS_BlogHero_202404_FNL.png" alt="Roman Cloud Batch Logo">
+
+            <span>Roman Cloud Batch</span>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#courses">Courses</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+        <div class="buttons">
+
+            <a href="login.html" class="login-btn">Login</a>
+
+            <a href="register.html" class="register-btn">Register</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <h1>
+            Learn
+            <span>AWS</span>,
+            Docker,
+            Jenkins &
+            CI/CD
+        </h1>
+
+        <p>
+
+            Welcome to Roman Cloud Batch.
+
+            Start your Cloud Engineering journey through practical projects,
+            hands-on labs and industry focused learning.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#courses" class="primary-btn">
+                Get Started
+            </a>
+
+            <a href="login.html" class="secondary-btn">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ40k1BBxmFY6Op_VdANzZNvDZKbkagEONWfER__Da-_qllheIiI0_vbFT&s=10" alt="Cloud Hero">
+
+    </div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat-card">
+
+        <h2>1000+</h2>
+
+        <p>Students</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>50+</h2>
+
+        <p>Projects</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>95%</h2>
+
+        <p>Success Rate</p>
+
+    </div>
+
+</section>
+
+<!-- ================= COURSES ================= -->
+
+<section id="courses" class="courses">
+
+    <h2>Our Courses</h2>
+
+    <div class="course-container">
+
+        <div class="course-card">
+            <i class="fa-brands fa-aws"></i>
+            <h3>AWS Cloud</h3>
+            <p>Learn EC2, S3, IAM, VPC and more.</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-brands fa-docker"></i>
+            <h3>Docker</h3>
+            <p>Containerization from beginner to intermediate.</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>Jenkins</h3>
+            <p>Build real CI/CD pipelines.</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-brands fa-linux"></i>
+            <h3>Linux</h3>
+            <p>Linux commands and administration.</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>Networking</h3>
+            <p>Networking for Cloud Engineers.</p>
+        </div>
+
+        <div class="course-card">
+            <i class="fa-solid fa-code-branch"></i>
+            <h3>CI/CD</h3>
+            <p>Build • Test • Deploy • Release.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="about">
+
+    <h2>About Roman Cloud Batch</h2>
+
+    <p>
+
+        Roman Cloud Batch helps students become Cloud Engineers by providing
+        practical learning, real projects and complete DevOps training.
+
+    </p>
+
+</section>
+
+<!-- ================= WHY US ================= -->
+
+<section class="features">
+
+    <h2>Why Choose Us?</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-laptop-code"></i>
+
+            <h3>Hands-on Labs</h3>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <h3>Real Projects</h3>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+            <h3>Career Ready</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+
+        Ready to Become a Cloud Engineer?
+
+    </h2>
+
+    <a href="register.html" class="primary-btn">
+
+        Join Now
+
+    </a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <h2>Roman Cloud Batch</h2>
+
+    <p>Email : support@romancloudbatch.com</p>
+
+    <p>Cloud | AWS | Docker | Jenkins | CI/CD</p>
+
+    <p>© 2026 Roman Cloud Batch. All Rights Reserved.</p>
+
+</footer>
+
+<!-- script  -->
+<script>
+    /* ==========================================
+    Roman Cloud Batch
+    Main JavaScript
+    ========================================== */
+
+    // ===========================
+    // Navbar Shadow on Scroll
+    // ===========================
+
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 40) {
+
+            header.style.boxShadow = "0 8px 20px rgba(0,0,0,.15)";
+            header.style.background = "#ffffff";
+
+        } else {
+
+            header.style.boxShadow = "0 4px 10px rgba(0,0,0,.08)";
+            header.style.background = "#ffffff";
+
+        }
+
+    });
+
+    // ===========================
+    // Smooth Button Animation
+    // ===========================
+
+    const buttons = document.querySelectorAll(".primary-btn,.secondary-btn");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("mouseenter", () => {
+
+            button.style.transform = "scale(1.05)";
+
+        });
+
+        button.addEventListener("mouseleave", () => {
+
+            button.style.transform = "scale(1)";
+
+        });
+
+    });
+
+    // ===========================
+    // Course Card Hover Animation
+    // ===========================
+
+    const cards = document.querySelectorAll(".course-card");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transform = "translateY(-10px)";
+            card.style.transition = ".3s";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform = "translateY(0px)";
+
+        });
+
+    });
+
+    // ===========================
+    // Feature Card Hover
+    // ===========================
+
+    const featureCards = document.querySelectorAll(".feature-card");
+
+    featureCards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transform = "translateY(-10px)";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform = "translateY(0px)";
+
+        });
+
+    });
+
+    // ===========================
+    // Counter Animation
+    // ===========================
+
+    const counters = document.querySelectorAll(".stat-card h2");
+
+    const speed = 40;
+
+    counters.forEach(counter => {
+
+        const updateCounter = () => {
+
+            const target = +counter.innerText.replace("+","").replace("%","");
+
+            const count = +counter.getAttribute("data-count") || 0;
+
+            const increment = Math.ceil(target / speed);
+
+            if(count < target){
+
+                counter.setAttribute("data-count", count + increment);
+
+                if(counter.innerText.includes("%")){
+
+                    counter.innerText = (count + increment) + "%";
+
+                }else{
+
+                    counter.innerText = (count + increment) + "+";
+
+                }
+
+                setTimeout(updateCounter,30);
+
+            }else{
+
+                if(counter.innerText.includes("%")){
+
+                    counter.innerText = target + "%";
+
+                }else{
+
+                    counter.innerText = target + "+";
+
+                }
+
+            }
+
+        };
+
+        updateCounter();
+
+    });
+
+    // ===========================
+    // Welcome Message
+    // ===========================
+
+    console.log("==================================");
+    console.log("Roman Cloud Batch");
+    console.log("Frontend Loaded Successfully");
+    console.log("==================================");
+
+    // ===========================
+    // Page Loaded
+    // ===========================
+
+    window.onload = () => {
+
+        console.log("Website Ready");
+
+    };
+</script>
+
+</body>
+</html>

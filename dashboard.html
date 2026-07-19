@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Roman Cloud Batch</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<style>
+    /* ===================================
+    Roman Cloud Batch
+    Dashboard CSS
+    =================================== */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Poppins',sans-serif;
+    }
+
+    body{
+        background:#f4f7fb;
+        color:#333;
+    }
+
+    /* =====================
+    Navbar
+    ===================== */
+
+    header{
+        background:#2563eb;
+        color:#fff;
+        padding:15px 0;
+    }
+
+    .navbar{
+        width:90%;
+        margin:auto;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        font-size:24px;
+        font-weight:bold;
+    }
+
+    .navbar ul{
+        display:flex;
+        list-style:none;
+    }
+
+    .navbar ul li{
+        margin-left:25px;
+    }
+
+    .navbar ul li a{
+        text-decoration:none;
+        color:#fff;
+        transition:.3s;
+    }
+
+    .navbar ul li a:hover{
+        color:#ffd54f;
+    }
+
+    /* =====================
+    Welcome
+    ===================== */
+
+    .welcome{
+        width:90%;
+        margin:40px auto;
+    }
+
+    .welcome h1{
+        font-size:35px;
+        margin-bottom:10px;
+    }
+
+    .welcome p{
+        color:#666;
+    }
+
+    /* =====================
+    Courses
+    ===================== */
+
+    .courses{
+        width:90%;
+        margin:40px auto;
+    }
+
+    .courses h2{
+        margin-bottom:20px;
+    }
+
+    .course-container{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:20px;
+    }
+
+    .card{
+        background:#fff;
+        padding:25px;
+        border-radius:10px;
+        box-shadow:0 5px 10px rgba(0,0,0,.1);
+        text-align:center;
+        transition:.3s;
+    }
+
+    .card:hover{
+        transform:translateY(-5px);
+    }
+
+    .card i{
+        font-size:45px;
+        color:#2563eb;
+        margin-bottom:15px;
+    }
+
+    .card h3{
+        margin-bottom:10px;
+    }
+
+    .card p{
+        color:#666;
+        margin-bottom:20px;
+    }
+
+    .card button{
+        background:#2563eb;
+        color:#fff;
+        border:none;
+        padding:10px 18px;
+        border-radius:5px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    .card button:hover{
+        background:#1d4ed8;
+    }
+
+    /* =====================
+    Progress
+    ===================== */
+
+    .progress{
+        width:90%;
+        margin:40px auto;
+    }
+
+    .progress h2{
+        margin-bottom:20px;
+    }
+
+    .progress-box{
+        background:#fff;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 5px 10px rgba(0,0,0,.1);
+    }
+
+    progress{
+        width:100%;
+        height:20px;
+        margin:15px 0;
+    }
+
+    /* =====================
+    Activity
+    ===================== */
+
+    .activity{
+        width:90%;
+        margin:40px auto;
+    }
+
+    .activity h2{
+        margin-bottom:20px;
+    }
+
+    .activity-box{
+        background:#fff;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 5px 10px rgba(0,0,0,.1);
+    }
+
+    /* =====================
+    Actions
+    ===================== */
+
+    .actions{
+        width:90%;
+        margin:40px auto;
+    }
+
+    .actions h2{
+        margin-bottom:20px;
+    }
+
+    .action-buttons{
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+    }
+
+    .action-buttons button{
+        background:#2563eb;
+        color:white;
+        border:none;
+        padding:12px 20px;
+        border-radius:5px;
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    .action-buttons button:hover{
+        background:#1d4ed8;
+    }
+
+    /* =====================
+    Footer
+    ===================== */
+
+    footer{
+        margin-top:50px;
+        background:#2563eb;
+        color:white;
+        text-align:center;
+        padding:20px;
+    }
+
+    /* =====================
+    Responsive
+    ===================== */
+
+    @media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    .navbar ul{
+        margin-top:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .navbar ul li{
+        margin:10px;
+    }
+
+    .welcome h1{
+        font-size:28px;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+
+    .action-buttons button{
+        width:100%;
+    }
+
+    }
+</style>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+Roman Cloud Batch
+
+</div>
+
+<ul>
+
+<li><a href="#">Dashboard</a></li>
+
+<li><a href="#">Courses</a></li>
+
+<li><a href="#">Profile</a></li>
+
+<li><a href="index.html">Logout</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- ================= WELCOME ================= -->
+
+<section class="welcome">
+
+<h1 id="welcomeUser">
+    Welcome 👋
+</h1>
+
+<p>
+
+Welcome to Roman Cloud Batch Dashboard.
+
+Start your Cloud Engineering journey.
+
+</p>
+
+</section>
+
+<!-- ================= COURSE SECTION ================= -->
+
+<section class="courses">
+
+<h2>My Courses</h2>
+
+<div class="course-container">
+
+<div class="card">
+
+<i class="fa-brands fa-aws"></i>
+
+<h3>AWS Cloud</h3>
+
+<p>Learn EC2, IAM, S3 and VPC.</p>
+
+<button>Start Learning</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-brands fa-docker"></i>
+
+<h3>Docker</h3>
+
+<p>Containerize your applications.</p>
+
+<button>Start Learning</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-gears"></i>
+
+<h3>Jenkins</h3>
+
+<p>Build CI/CD Pipelines.</p>
+
+<button>Start Learning</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-brands fa-linux"></i>
+
+<h3>Linux</h3>
+
+<p>Master Linux Commands.</p>
+
+<button>Start Learning</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-network-wired"></i>
+
+<h3>Networking</h3>
+
+<p>Networking for Cloud.</p>
+
+<button>Start Learning</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-code-branch"></i>
+
+<h3>CI/CD</h3>
+
+<p>Deploy applications automatically.</p>
+
+<button>Start Learning</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROGRESS ================= -->
+
+<section class="progress">
+
+<h2>Learning Progress</h2>
+
+<div class="progress-box">
+
+<p>Overall Progress</p>
+
+<progress value="0" max="100"></progress>
+
+<span>0%</span>
+
+</div>
+
+</section>
+
+<!-- ================= ACTIVITY ================= -->
+
+<section class="activity">
+
+<h2>Recent Activity</h2>
+
+<div class="activity-box">
+
+<p>
+
+No activity available.
+
+Start learning to track your progress.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= QUICK ACTION ================= -->
+
+<section class="actions">
+
+<h2>Quick Actions</h2>
+
+<div class="action-buttons">
+
+<button>Continue Learning</button>
+
+<button>View Courses</button>
+
+<button onclick="window.location='index.html'">
+
+Logout
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Roman Cloud Batch
+
+</p>
+
+</footer>
+
+<script>
+    /* ===================================
+    Roman Cloud Batch
+    Dashboard JavaScript
+    =================================== */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        console.log("Dashboard Loaded Successfully");
+
+        // ==============================
+        // Check User Login
+        // ==============================
+
+        const loggedInUser = localStorage.getItem("loggedInUser");
+
+        if (!loggedInUser) {
+
+            alert("Please login first.");
+
+            window.location.href = "login.html";
+
+            return;
+
+        }
+
+        // ==============================
+        // Welcome Message
+        // ==============================
+
+        const hour = new Date().getHours();
+        const welcomeHeading = document.querySelector(".welcome h1");
+
+        // Greeting
+        let greeting = "";
+
+        if (hour < 12) {
+
+            greeting = "Good Morning";
+
+        }
+        else if (hour < 17) {
+
+            greeting = "Good Afternoon";
+
+        }
+        else {
+
+            greeting = "Good Evening";
+
+        }
+
+        // Show Greeting with Username
+
+        if (welcomeHeading) {
+
+            welcomeHeading.innerHTML = `${greeting}, ${loggedInUser} 👋`;
+
+        }
+
+        // ==============================
+        // Course Buttons
+        // ==============================
+
+        const courseButtons = document.querySelectorAll(".card button");
+
+        courseButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const courseName = this.parentElement.querySelector("h3").innerText;
+
+                alert("Opening " + courseName + " Course...");
+
+            });
+
+        });
+
+        // ==============================
+        // Continue Learning Button
+        // ==============================
+
+        const continueBtn = document.querySelector(".action-buttons button");
+
+        if (continueBtn) {
+
+            continueBtn.addEventListener("click", function () {
+
+                alert("Continue Learning feature will be available soon.");
+
+            });
+
+        }
+
+    });
+
+    // ==============================
+    // Logout Function
+    // ==============================
+
+    function logout() {
+
+        let confirmLogout = confirm("Are you sure you want to logout?");
+
+        if (confirmLogout) {
+
+            // Remove Logged In User
+
+            localStorage.removeItem("loggedInUser");
+
+            alert("Logged out successfully.");
+
+            window.location.href = "index.html";
+
+        }
+
+    }
+
+    console.log("Roman Cloud Batch Dashboard Ready");
+
+</script>
+</body>
+
+</html>

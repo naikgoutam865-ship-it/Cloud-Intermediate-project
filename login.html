@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Roman Cloud Batch</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<style>
+    /* ==========================================
+    Roman Cloud Batch
+    Login Page Stylesheet
+    ========================================== */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Poppins',sans-serif;
+    }
+
+    :root{
+
+        --primary:#2563eb;
+        --secondary:#1d4ed8;
+        --dark:#111827;
+        --light:#f3f8ff;
+        --white:#ffffff;
+        --text:#6b7280;
+        --border:#dbe4f3;
+        --shadow:0 15px 40px rgba(0,0,0,.08);
+
+    }
+
+    body{
+
+        background:linear-gradient(135deg,#2563eb,#4f8cff,#dbeafe);
+
+        min-height:100vh;
+
+    }
+
+    /* ==========================
+        Main Container
+    ========================== */
+
+    .login-container{
+
+        width:100%;
+        min-height:100vh;
+
+        display:flex;
+
+    }
+
+    /* ==========================
+        Left Panel
+    ========================== */
+
+    .left-panel{
+
+        width:50%;
+
+        background:linear-gradient(135deg,#1e3a8a,#2563eb);
+
+        color:#fff;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        padding:60px;
+
+        text-align:center;
+
+    }
+
+    .left-panel h1{
+
+        font-size:42px;
+
+        margin-bottom:20px;
+
+    }
+
+    .left-panel p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+        margin-bottom:15px;
+
+    }
+
+    .left-panel img{
+
+        width:85%;
+
+        max-width:450px;
+
+        margin-top:30px;
+
+    }
+
+    /* ==========================
+        Right Panel
+    ========================== */
+
+    .right-panel{
+
+        width:50%;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        padding:40px;
+
+    }
+
+    /* ==========================
+        Login Card
+    ========================== */
+
+    .login-card{
+
+        width:100%;
+
+        max-width:470px;
+
+        background:#fff;
+
+        border-radius:20px;
+
+        padding:40px;
+
+        box-shadow:var(--shadow);
+
+    }
+
+    .login-card h2{
+
+        font-size:34px;
+
+        color:var(--dark);
+
+        margin-bottom:10px;
+
+    }
+
+    .login-card p{
+
+        color:var(--text);
+
+        margin-bottom:30px;
+
+    }
+
+    /* ==========================
+        Inputs
+    ========================== */
+
+    .input-box{
+
+        margin-bottom:22px;
+
+    }
+
+    .input-box label{
+
+        display:block;
+
+        margin-bottom:8px;
+
+        font-weight:600;
+
+    }
+
+    .input-field{
+
+        display:flex;
+
+        align-items:center;
+
+        border:1px solid var(--border);
+
+        border-radius:12px;
+
+        overflow:hidden;
+
+        transition:.3s;
+
+        background:#fff;
+
+    }
+
+    .input-field:focus-within{
+
+        border-color:var(--primary);
+
+        box-shadow:0 0 8px rgba(37,99,235,.25);
+
+    }
+
+    .input-field i{
+
+        width:50px;
+
+        text-align:center;
+
+        color:#6b7280;
+
+    }
+
+    .input-field input{
+
+        width:100%;
+
+        border:none;
+
+        outline:none;
+
+        padding:15px;
+
+        font-size:15px;
+
+    }
+
+    #togglePassword{
+
+        cursor:pointer;
+
+    }
+
+    /* ==========================
+        Remember Me
+    ========================== */
+
+    .options{
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        margin-bottom:25px;
+
+        font-size:14px;
+
+    }
+
+    .options label{
+
+        display:flex;
+
+        gap:8px;
+
+        align-items:center;
+
+    }
+
+    .options a{
+
+        text-decoration:none;
+
+        color:var(--primary);
+
+    }
+
+    .options a:hover{
+
+        text-decoration:underline;
+
+    }
+
+    /* ==========================
+        Login Button
+    ========================== */
+
+    .login-btn{
+
+        width:100%;
+
+        border:none;
+
+        background:var(--primary);
+
+        color:white;
+
+        padding:15px;
+
+        font-size:17px;
+
+        border-radius:12px;
+
+        cursor:pointer;
+
+        transition:.3s;
+
+    }
+
+    .login-btn:hover{
+
+        background:var(--secondary);
+
+        transform:translateY(-2px);
+
+    }
+
+    /* ==========================
+        Divider
+    ========================== */
+
+    .divider{
+
+        text-align:center;
+
+        margin:30px 0;
+
+        position:relative;
+
+    }
+
+    .divider::before{
+
+        content:"";
+
+        position:absolute;
+
+        left:0;
+
+        top:50%;
+
+        width:45%;
+
+        height:1px;
+
+        background:#ccc;
+
+    }
+
+    .divider::after{
+
+        content:"";
+
+        position:absolute;
+
+        right:0;
+
+        top:50%;
+
+        width:45%;
+
+        height:1px;
+
+        background:#ccc;
+
+    }
+
+    .divider span{
+
+        background:#fff;
+
+        padding:0 12px;
+
+        color:#666;
+
+    }
+
+    /* ==========================
+        Social Login
+    ========================== */
+
+    .social-login{
+
+        display:flex;
+
+        gap:15px;
+
+    }
+
+    .social-login button{
+
+        flex:1;
+
+        border:1px solid #ddd;
+
+        background:#fff;
+
+        padding:14px;
+
+        border-radius:10px;
+
+        cursor:pointer;
+
+        transition:.3s;
+
+        font-size:15px;
+
+    }
+
+    .social-login button:hover{
+
+        background:#f5f7fb;
+
+    }
+
+    .social-login i{
+
+        margin-right:8px;
+
+    }
+
+    /* ==========================
+        Register Link
+    ========================== */
+
+    .register-link{
+
+        text-align:center;
+
+        margin-top:30px;
+
+    }
+
+    .register-link a{
+
+        color:var(--primary);
+
+        text-decoration:none;
+
+        font-weight:600;
+
+    }
+
+    /* ==========================
+        Back Home
+    ========================== */
+
+    .back-home{
+
+        margin-top:20px;
+
+        text-align:center;
+
+    }
+
+    .back-home a{
+
+        text-decoration:none;
+
+        color:#555;
+
+    }
+
+    .back-home a:hover{
+
+        color:var(--primary);
+
+    }
+
+    /* ==========================
+        Responsive
+    ========================== */
+
+    @media(max-width:992px){
+
+    .login-container{
+
+        flex-direction:column;
+
+    }
+
+    .left-panel{
+
+        width:100%;
+
+        padding:50px 30px;
+
+    }
+
+    .right-panel{
+
+        width:100%;
+
+        padding:40px 20px;
+
+    }
+
+    .left-panel img{
+
+        width:280px;
+
+    }
+
+    }
+
+    @media(max-width:600px){
+
+    .login-card{
+
+        padding:30px 20px;
+
+    }
+
+    .login-card h2{
+
+        font-size:28px;
+
+    }
+
+    .options{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        align-items:flex-start;
+
+    }
+
+    .social-login{
+
+        flex-direction:column;
+
+    }
+
+    }
+</style>
+<body>
+
+<!-- ================= LOGIN CONTAINER ================= -->
+
+<div class="login-container">
+
+    <!-- Left Side -->
+
+    <div class="left-panel">
+
+        <h1>Roman Cloud Batch</h1>
+
+        <p>
+
+            Welcome Back 👋
+
+        </p>
+
+        <p>
+
+            Login to continue your Cloud Engineering journey with
+            AWS, Docker, Jenkins and CI/CD.
+
+        </p>
+
+        <img src="" , alt="LOGIN IMAGE">
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="right-panel">
+
+        <div class="login-card">
+
+            <h2>Login</h2>
+
+            <p>Please login to your account</p>
+
+            <form id="loginForm">
+
+                <!-- Username -->
+
+                <div class="input-box">
+
+                    <label>
+
+                        Username
+
+                    </label>
+
+                    <div class="input-field">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Enter Username"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="input-box">
+
+                    <label>
+
+                        Password
+
+                    </label>
+
+                    <div class="input-field">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter Password"
+                            required>
+
+                        <i
+                            class="fa-solid fa-eye"
+                            id="togglePassword">
+
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <!-- Remember -->
+
+                <div class="options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="#">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+                <!-- Login -->
+
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+            <!-- Social Login -->
+
+            <div class="social-login">
+
+                <button>
+
+                    <i class="fa-brands fa-google"></i>
+
+                    Google
+
+                </button>
+
+                <button>
+
+                    <i class="fa-brands fa-github"></i>
+
+                    GitHub
+
+                </button>
+
+            </div>
+
+            <!-- Register -->
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="register.html">
+
+                    Register
+
+                </a>
+
+            </div>
+
+            <!-- Home -->
+
+            <div class="back-home">
+
+                <a href="index.html">
+
+                    ← Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    /* ==========================================
+    Roman Cloud Batch
+    Login JavaScript
+    ========================================== */
+
+    // ================================
+    // Select Elements
+    // ================================
+
+    const loginForm = document.getElementById("loginForm");
+
+    const username = document.getElementById("username");
+
+    const password = document.getElementById("password");
+
+    const togglePassword = document.getElementById("togglePassword");
+
+
+    // ================================
+    // Show / Hide Password
+    // ================================
+
+    togglePassword.addEventListener("click", function () {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            togglePassword.classList.remove("fa-eye");
+
+            togglePassword.classList.add("fa-eye-slash");
+
+        } else {
+
+            password.type = "password";
+
+            togglePassword.classList.remove("fa-eye-slash");
+
+            togglePassword.classList.add("fa-eye");
+
+        }
+
+    });
+
+
+    // ================================
+    // Login Validation
+    // ================================
+
+    loginForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const user = username.value.trim();
+
+        const pass = password.value.trim();
+
+        // Username Empty
+
+        if (user === "") {
+
+            alert("Please enter your username.");
+
+            username.focus();
+
+            return;
+
+        }
+
+        // Password Empty
+
+        if (pass === "") {
+
+            alert("Please enter your password.");
+
+            password.focus();
+
+            return;
+
+        }
+
+        // Username Length
+
+        if (user.length < 3) {
+
+            alert("Username must be at least 3 characters.");
+
+            username.focus();
+
+            return;
+
+        }
+
+        // Password Length
+
+        if (pass.length < 6) {
+
+            alert("Password must be at least 6 characters.");
+
+            password.focus();
+
+            return;
+
+        }
+
+        // =====================================
+        // Check User From LocalStorage
+        // =====================================
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        let validUser = users.find(function(item){
+
+            return item.username === user && item.password === pass;
+
+        });
+
+        if(!validUser){
+
+            alert("Invalid Username or Password.");
+
+            return;
+
+        }
+
+        // =====================================
+        // Login Success
+        // =====================================
+
+        alert("Login Successful!");
+
+        localStorage.setItem("loggedInUser", validUser.fullname);
+
+        // Redirect to Dashboard
+
+        window.location.href = "dashboard.html";
+
+    });
+
+
+    // ================================
+    // Enter Key Support
+    // ================================
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+
+            loginForm.requestSubmit();
+
+        }
+
+    });
+
+
+    // ================================
+    // Input Focus Effect
+    // ================================
+
+    const inputs = document.querySelectorAll("input");
+
+    inputs.forEach(input => {
+
+        input.addEventListener("focus", function () {
+
+            this.parentElement.style.borderColor = "#2563eb";
+
+        });
+
+        input.addEventListener("blur", function () {
+
+            this.parentElement.style.borderColor = "#dbe4f3";
+
+        });
+
+    });
+
+
+    // ================================
+    // Welcome Message
+    // ================================
+
+    console.log("=================================");
+    console.log(" Roman Cloud Batch ");
+    console.log(" Login Page Loaded Successfully ");
+    console.log("=================================");
+</script>
+
+</body>
+
+</html>
